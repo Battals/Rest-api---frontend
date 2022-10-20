@@ -27,7 +27,7 @@ function pushData() {
   };
 
   const jsonObject = JSON.stringify(toSend);
-  console.log(jsonObject);
+  
 
   const xhr = new XMLHttpRequest();
 
@@ -63,12 +63,11 @@ function getAllProducts() {
       return resp.json();
     })
 
-    .then((activity) => {
-      console.log(activity);
+    .then((product) => {
 
       let html = "";
 
-      activity.forEach((activity) => {
+      product.forEach((product) => {
         html += `
 
 
@@ -76,21 +75,39 @@ function getAllProducts() {
 
         <tr>
 
-          <td>${activity.id} </td>
+          <td>${product.id} </td>
 
-          <td>${activity.name}</td>
+          <td>${product.name}</td>
 
           
-          <td>${activity.quantity} </td>
+          <td>${product.quantity} </td>
 
-          <td>${activity.price} </td>
+          <td>${product.price} </td>
 
                   </tr>
                   </tbody>`;
 
-        console.log(html);
       });
-      
+
       document.querySelector(".activityData").innerHTML = html;
     });
+}
+
+function popUp() {
+  var popup = document.getElementById("myPopup");
+  popup.style.display = "grid";
+}
+
+async function updateProduct() {
+  popUp();
+
+  const object = document.getElementById("updateById");
+  const response = await fetch(
+    "http://localhost:9191/productById/" + object.value
+  );
+  const data = await response.json();
+  
+  document.getElementById("name1").placeholder = data.name;
+  document.getElementById("quantity1").placeholder = data.quantity;
+  document.getElementById("price1").placeholder = data.price;
 }

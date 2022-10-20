@@ -52,11 +52,18 @@ th {
   margin-bottom: 10px;
 }
 
-#Btn1:hover{
+#Btn1:hover {
   background-color: rgba(14, 83, 163);
   transition: 0.7s;
 }
 
-div{
+div {
   font-family: monospace;
+}
+
+#myPopup {
+  padding: 10px;
+  border: 2px solid rgb(14, 83, 163);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
