@@ -86,11 +86,11 @@ function getAllProducts() {
           <td>${activity.price} </td>
 
                   </tr>
-                  
                   </tbody>`;
 
         console.log(html);
       });
+      
       document.querySelector(".activityData").innerHTML = html;
     });
 }
