@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="main.js"></script>
+    <title>Frontend</title>
+  </head>
+  <body>
+    <div class="div1">
+      <h2>Create new product</h2>
+      <form action="pushData()"></form>
+      <input type="text" id="name" placeholder="Enter your name" required />
+      <input
+        type="number"
+        id="quantity"
+        placeholder="Enter quantity"
+        required
+      />
+      <input type="text" id="price" placeholder="Enter price" required />
+      <button id="myBtn" type="submit" onclick="pushData()">
+        Create product
+      </button>
+      <p id="pText"></p>
+      <p id="aText"></p>
+    </div>
+    <div class="div2">
+      <h2>Find product</h2>
+      <input type="number" id="findById" placeholder="Enter product-ID" />
+      <button onclick="getProducts()">Find product</button>
+      <dd id="box"></dd>
+    </div>
+
+    <div class="div3">
+      <h2>Delete product</h2>
+      <input
+        type="number"
+        id="deleteById"
+        placeholder="Enter product-ID"
+        required
+      />
+      <button onclick="deleteProduct()" placeholder="Enter product-ID">
+        Delete product
+      </button>
+      <dd id="box1"></dd>
+    </div>
+    <div class="div4" id="Product-list">
+      <h2>All products</h2>
+      <div id="Products">
+        <h2>Products</h2>
+        <button id="Btn1" onclick="getAllProducts()">Show products</button>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody class="activityData"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="div5">
+      <h2>Update product</h2>
+      <input
+        type="number"
+        id="updateById"
+        placeholder="Enter product-ID"
+        required
+      />
+      <button>Submit</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+.div1 {
+  display: inline-grid;
+}
+
+input {
+  margin: 3px;
+}
+
+button {
+  display: initial;
+  background-color: white;
+  color: rgb(1, 1, 2);
+  border: 1px solid black;
+  border-radius: 2px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+h2 {
+  font-family: monospace;
+}
+
+td,
+th {
+  border: 2px solid rgb(14, 83, 163);
+  text-align: center;
+  padding: auto;
+  font-family: monospace;
+}
+
+#Products {
+  display: grid;
+  font-weight: 600;
+}
+
+#Btn1 {
+  width: 20%;
+  margin: auto;
+  padding: 3px;
+  border: 2px solid rgb(14, 83, 163);
+  cursor: pointer;
+}
+
+.div4 {
+  padding: 10px;
+  border: 2px solid rgb(14, 83, 163);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
