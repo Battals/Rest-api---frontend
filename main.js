@@ -27,7 +27,6 @@ function pushData() {
   };
 
   const jsonObject = JSON.stringify(toSend);
-  
 
   const xhr = new XMLHttpRequest();
 
@@ -64,7 +63,6 @@ function getAllProducts() {
     })
 
     .then((product) => {
-
       let html = "";
 
       product.forEach((product) => {
@@ -86,7 +84,6 @@ function getAllProducts() {
 
                   </tr>
                   </tbody>`;
-
       });
 
       document.querySelector(".activityData").innerHTML = html;
@@ -98,7 +95,7 @@ function popUp() {
   popup.style.display = "grid";
 }
 
-async function updateProduct() {
+async function fetchProduct() {
   popUp();
 
   const object = document.getElementById("updateById");
@@ -106,8 +103,39 @@ async function updateProduct() {
     "http://localhost:9191/productById/" + object.value
   );
   const data = await response.json();
-  
+
   document.getElementById("name1").placeholder = data.name;
   document.getElementById("quantity1").placeholder = data.quantity;
   document.getElementById("price1").placeholder = data.price;
+
+  console.log;
+}
+
+function updateProduct() {
+  var array = [];
+
+  array[0] = document.getElementById("updateById").value;
+  array[1] = document.getElementById("name1").value;
+  array[2] = document.getElementById("quantity1").value;
+  array[3] = document.getElementById("price1").value;
+
+  const toSend1 = {
+    id: array[0],
+    name: array[1],
+    quantity: array[2],
+    price: array[3],
+  };
+
+  const jsonObject = JSON.stringify(toSend1);
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("PUT", "http://localhost:9191/update");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(jsonObject);
+
+  document.getElementById("box2").style.color = "green";
+  document.getElementById("box2").style.font = "revert";
+  document.getElementById("box2").style.fontWeight = "bolder";
+  document.getElementById("box2").innerHTML = "Product was updated";
 }

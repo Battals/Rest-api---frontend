@@ -72,11 +72,13 @@
         placeholder="Enter product-ID"
         required
       />
-      <button onclick="updateProduct()">Submit</button>
-      <dd id="box2"></dd>
+      <button onclick="fetchProduct()">Submit</button>
+      
       <fieldset id="myPopup" style="display: none;">
           
         <h2>Product info</h2>
+
+        <dd id="box2"></dd>
       
         
         <label for="Name">Name:</label>
@@ -89,7 +91,7 @@
         <input type="number" id="price1" >
       
     
-        <button type="submit">Update</button>
+        <button type="submit" onclick="updateProduct()" id="updateProductBtn">Update</button>
       </fieldset>
      
       
